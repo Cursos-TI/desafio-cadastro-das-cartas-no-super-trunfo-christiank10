@@ -18,7 +18,7 @@ int main(){
     printf("Pib: %f\n", pib);
     printf("Turisticos: %i\n", turisticos);
 
-    
+    printf("Novo commint\n");
 
     return 0;
 }
