@@ -2,14 +2,14 @@
 
 int main(){
     printf("cartas super trunfo!\n");
-    //// carta 1 ////
-    char estado[10] ="Ceara";
-    char codigo = 'C01';
-    char cidade[20] = "Fortaleza";
-    int populacao = 2574;
-    float area = 313;
-    float pib = 73;
-    int turisticos = 15;
+    //// carta 2 ////
+    char estado[10] ="Bahia";
+    char codigo = 'B02';
+    char cidade[20] = "Salvador";
+    int populacao = 14.850;
+    float area = 693;
+    float pib = 115;
+    int turisticos = 13;
 
     printf("Estado: %s\n", estado);
     printf("Codigo: %c\n", codigo);
@@ -18,9 +18,7 @@ int main(){
     printf("Pib: %f\n", pib);
     printf("Turisticos: %i\n", turisticos);
 
-     return 0;
- 
-    printf("Novo commint\n");
+    
 
-
+    return 0;
 }
