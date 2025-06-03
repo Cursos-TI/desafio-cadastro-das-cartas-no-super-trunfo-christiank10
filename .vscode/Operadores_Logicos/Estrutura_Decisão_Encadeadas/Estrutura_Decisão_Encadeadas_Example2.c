@@ -17,7 +17,7 @@ int main(){
     } else if (nota >= 60){
         printf ("O conceito é D!\n");
     } else if (nota >= 50){
-        printf ("Oconceito é E!\n");
+        printf ("O conceito é E!\n");
     } else {
         printf ("O conceito é F\n");
     }
