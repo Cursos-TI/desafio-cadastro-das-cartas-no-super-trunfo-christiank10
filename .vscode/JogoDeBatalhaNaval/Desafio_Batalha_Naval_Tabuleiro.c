@@ -1,53 +1,35 @@
 #include <stdio.h>
 
-#define TAM 10 
-#define TAM_NAVIO 3   
-#define AGUA 0  
-#define NAVIO 3  
+int main() {
+    int tabuleiro[10][10];
 
-void inicializaTabuleiro(int tab[TAM][TAM]) {
-    for (int i = 0; i < TAM; i++)
-        for (int j = 0; j < TAM; j++)
-            tab[i][j] = AGUA;
-}
+    // Inicializa com zeros
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            tabuleiro[i][j] = 0;
+        }
+    }
 
-void posicionaHorizontal(int tab[TAM][TAM], int linha, int coluna) {
-    for (int k = 0; k < TAM_NAVIO; k++)
-        tab[linha][coluna + k] = NAVIO;
-}
+    // Coloca o número 3 na horizontal (linha 2, colunas 3 a 5)
+    int linha = 2;
+    for (int j = 3; j < 6; j++) {
+        tabuleiro[linha][j] = 3;
+    }
 
-void posicionaVertical(int tab[TAM][TAM], int linha, int coluna) {
-    for (int k = 0; k < TAM_NAVIO; k++)
-        tab[linha + k][coluna] = NAVIO;
-}
+    // Coloca o número 3 na vertical (coluna 4, linhas 5 a 7)
+    int coluna = 7;
+    for (int i = 6; i < 9; i++) {
+        tabuleiro[i][coluna] = 3;
+    }
 
-void imprimeTabuleiro(int tab[TAM][TAM]) {
-    printf("\n     ");
-    for (int col = 0; col < TAM; col++) printf("%2d ", col);
-    printf("\n");
-
-    for (int i = 0; i < TAM; i++) {
-        printf("%2d | ", i);
-        for (int j = 0; j < TAM; j++) {
-            printf("%d  ", tab[i][j]);
+    // Imprime o tabuleiro
+    printf("Tabuleiro Batalha Naval:\n");
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            printf("%d ", tabuleiro[i][j]);
         }
         printf("\n");
     }
-}
-
-int main(void) {
-    int tabuleiro[TAM][TAM];
-    inicializaTabuleiro(tabuleiro);
-
-    int navioH[TAM_NAVIO] = {NAVIO, NAVIO, NAVIO};
-    int navioV[TAM_NAVIO] = {NAVIO, NAVIO, NAVIO};
-    (void)navioH;  // evita warnings de variável não usada
-    (void)navioV;
-
-    posicionaHorizontal(tabuleiro, 2, 1);  // coloca navio H
-    posicionaVertical(tabuleiro,   5, 7);  // coloca navio V
-
-    imprimeTabuleiro(tabuleiro);
 
     return 0;
 }
